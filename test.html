@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>开房记录查询[须翻墙] --FINDMIMA密码网 社工库在线查询,免费社工库,社工库网站,密码查看器,密码泄露查询</title>
+	<meta name="keywords" content="社工库,密码库,社工库网站,QQ群关系,QQ密码查询,QQ老密,密码泄露查询,findmima,开房记录查询,社工数据库,社工数据,社工密码,泄漏密码">
+	<meta name="description" content="Find密码网所有数据来自互联网,旨在找回遗忘密码,或对已泄露密码进行修改防范,请勿非法使用,否则一切后果自负！" />
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./static/css/bootstrap.css" rel="stylesheet">
+<link href="./static/css/style.css" rel="stylesheet">
+<link href="./static/css/isdc-theme.css" rel="stylesheet">
+<link rel="shortcut icon" href="./static/css/favicon.ico">
+
+
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+        <style type="text/css">
+<!--
+.STYLE2 {color: #999999; }
+.STYLE3 {color: #FF0000}
+-->
+        </style>
+</head>
+
+<body class="home">
+    <div class="navbar navbar-inverse navbar-fixed-top headroom animated headroom--top">
+    <div class="container">
+        <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <a class="navbar-brand" href=""><img src="./static/css/logo.png"></a>        </div>
+
+        <div class="navbar-collapse collapse">
+                                 <ul class="nav navbar-nav pull-right">
+                                    <li><a href="http://www.findmima.com">首页/密码库</a></li>
+									<li><a href="http://qq.findmima.com">QQ老密码</a></li>
+								    <li><a href="http://qun.findmima.com">QQ群关系</a></li>
+									<li class="active"><a href="http://www.findmima.com/info/kf.html">开房记录</a></li>
+                                    <li><a href="http://www.findmima.com/info/list.html">泄密列表</a></li>
+									<li><a href="./status.php">主机状态</a></li>
+									<li><a href="http://www.findmima.com/info/about.html">关于我们</a></li>
+                                </ul>
+      </div>    </div>
+</div><div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox"> <br>
+      <br>
+      <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+      <script src="./static/js/system.js"></script>
+      <script src="./static/js/administry.js"></script>
+      <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+      <script src="./ajax.php?act=database"></script>
+      <div class="jumbotron"> <br>
+          <br>
+          <div  style="margin:0 auto;width: 1000px;"><br>
+
+  <p><span class="input-group">
+  <select class="btn btn-success" id="match_act" name="match_act">
+    <option value="2">精确匹配</option>
+  </select>
+
+   <select class="btn btn-primary" id="select_act" name="select_act">
+    <option  class="btn-group" value="1">姓名</option>
+    <option class="btn-group" value="2">身份证号</option>
+	<option class="btn-group" value="3">手机号码</option>
+  </select>
+  </span></p>
+  <div id="jshint-pitch" class="alert alert-info scan-wait" style="display:none;margin-top:10px;font-size:14px">  </div>
+  <div id="scan-result-box" style="font-size:12px;">
+    <div class="input-group"><span class="input-group-btn scan-but-span">
+      <button type="button" class="btn btn-success" onClick="getdata();">查询吧!</button>
+      </span>
+      <input placeholder="请按选择输入姓名、证件号、手机号，看看你的信息是否泄露~~~""  name="key" class="form-control" id="key" ></input>
+    </div>
+	<br>
+<font size="2" div align="center" class="STYLE2">FIND密码网[<a href="http://www.findmima.com">FindMima.Com</a>]申明：<br>
+<span class="STYLE3">
+为了遵守中国法律，开房记录只能在国外查询，中国网友请扶墙后访问，为保护个人隐私，部分字段用*隐藏，敬请谅解，</span><br>
+开房记录由多年前互联网上公开的数据整理而成，目前共：20,777,328条(2000万,已剔除部分无意义数据)，<br>
+本站坚决不做任何违法黑产谋利，不窃取任何信息，数据来自互联网，旨在找回遗忘密码，或对已泄露密码进行修改防范，请勿非法使用,否则一切后果自负。</font></div>
+
+
+
+  <div style="display:none;" id="selecting" class="progress progress-striped active progress-info"><span><b></b></span></div>
+<table  style="font-size:12px;display:none;" id="somd5_table" >
+<thead>
+<tr>
+		<th width="10%">姓名</th>
+		<th width="8%">sex</th>
+		<th width="20%">身份证号</th>
+		<th width="20%">开户时间</th>
+        <th width="15%">电话</th>
+		<th width="0%">地址</th>
+
+	</tr>
+</thead>
+<tbody id="value_tables">
+	</tbody>
+</table>
+</div>
+      </div>
+    <div class="item"> </div>
+  </div>
+</div>
+
+
+    <div class="container text-center">
+        <br>
+        <br>
+
+        <h3 class="thin"></h5>
+        <p class="text-muted">据报道：天才10秒钟就可以记住这个域名 FindMima.Com = 找密码</p>
+    </div>
+
+
+
+
+<footer id="footer" class="top-space">
+    </div>
+    <div class="footer2">
+        <div class="container">
+            <div class="row">
+
+
+                    <div class="widget-body">
+                        <p class="text-center">
+                            Copyright  &copy;  2015 FIND密码泄露查询网
+                        </p>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- 51.la统计 -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66833093-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- 结束 -->
+
+  </body>

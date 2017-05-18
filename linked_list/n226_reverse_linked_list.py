@@ -1,4 +1,4 @@
-#there are two solutions: iterative and recursive
+# there are two solutions: iterative and recursive
 class ListNode:
     def __init__(self, value):
         self.value = value
@@ -6,10 +6,11 @@ class ListNode:
 
     def __repr__(self):
         a = []
-        while hasattr(self,'value'):
+        while hasattr(self, 'value'):
             a.append(str(self.value))
             self = self.next
         return ''.join(a)
+
 
 class Solution:
     def reverseListIterative(self, head):
@@ -19,7 +20,7 @@ class Solution:
             head = head.next
             curr.next = prev
             prev = curr
-            #a simple trick : head.next, head, prev = prev, head.next, head
+            # a simple trick : head.next, head, prev = prev, head.next, head
         return prev
 
     def reverseListRecursive(self, head, prev=None):
