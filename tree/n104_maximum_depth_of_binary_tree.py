@@ -28,9 +28,22 @@ class Solution(object):
             return 0
         return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
-    # iterative BFS level order traversal
+    # iterative, BFS, level order traversal
     def maxDepth1(self, root):
-        pass
+        if not root:
+            return 0
+        curlevel = [root]
+        h = 0
+        while curlevel:
+            nextlevel = []
+            for i in curlevel:
+                if i.left:
+                    nextlevel.append(i.left)
+                if i.right:
+                    nextlevel.append(i.right)
+            h += 1
+            curlevel = nextlevel
+        return h
 
 if __name__ == "__main__":
     t = TreeNode(0)
