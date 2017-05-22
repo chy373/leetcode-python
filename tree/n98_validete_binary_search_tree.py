@@ -32,46 +32,25 @@ class TreeNode(object):
 
 class Solution(object):
 
+    # in-order traversal, it's an ascending array, compare current node with previous node
     def isValidBST(self, root):
-        """
-        :type root: TreeNode
-        :rtype: bool
-        """
-        if not root:
-            return False
-        if not root.left and not root.right:
+        self.prev = None
+        return self.validate(root, self.prev)
+
+    def validate(self, node, prev):
+        if not node:
             return True
-        else:
-            if root.left:
-                if root.left.val >= root.val:
-                    return False
-                else:
-                    return self.isValidBST(root.left)
-            if root.right:
-                if root.right.val <= root.val:
-                    return False
-                else:
-                    return self.isValidBST(root.right)
-
-
-    def heleper(self, root, min_value, max_value):
-        if not root:
+        if not self.validate(node.left, self.prev):
             return False
-        if not root.left and not root.right:
+        if not self.prev and self.prev.val >= node.val:
+            return False
+        self.prev = node
+        return self.validate(node.right, self.prev)
+
+    def isValidBST1(self, root, floor=float('-inf'), ceiling=float('inf')):
+        if not root:
             return True
-        else:
-            if root.left:
-                if root.left.val >= root.val:
-                    return False
-                else:
-                    return self.isValidBST(root.left, root.left.val, )
-            if root.right:
-                if root.right.val <= root.val:
-                    return False
-                else:
-                    return self.isValidBST(root.right)
-
-
-
-
-
+        if root.val <= floor or root.val >= ceiling:
+            return False
+        # in the left branch, root is the new ceiling; contrarily root is the new floor in right branch
+        return self.isValidBST(root.left, floor, root.val) and self.isValidBST(root.right, root.val, ceiling)
